@@ -1,7 +1,7 @@
 @extends('../layout/layout')
 @section('content')
     <div class="col-sm-8">
-        <table class="table table-bordered">
+        <table class="table table-bordered table-responsive">
             <tbody>
                 <tr>
                     <td><strong>Modelo: </strong> {{ $modeloMoto->nombre  }}</td>

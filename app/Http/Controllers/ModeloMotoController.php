@@ -18,4 +18,11 @@ class ModeloMotoController extends Controller
 
         return view('modelo-motos.show', compact('modeloMoto'));
     }
+
+    public function destroy($id){
+        $modeloMoto = ModeloMoto::find($id);
+        $modeloMoto->delete();
+
+        return back()->with('info', 'El producto fue eliminado');
+    }
 }

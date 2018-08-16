@@ -29,10 +29,18 @@
                         {{--<td>{{$modeloMoto->url_imagen}}</td>--}}
                         {{--<td>{{$modeloMoto->estado}}</td>--}}
                         <td>
-                            <a href="{{ route('modelos-motos.show', $modeloMoto->id ) }}">Ver</a>
+                            <a href="{{ route('modelos-motos.show', $modeloMoto->id ) }}" class="btn btn-link">Ver</a>
                         </td>
-                        <td>Editar</td>
-                        <td>Eliminar</td>
+                        <td>
+                            <a href="{{ route('modelos-motos.edit', $modeloMoto->id ) }}" class="btn btn-link">Editar</a>
+                        </td>
+                        <td>
+                            <form action="{{ route('modelos-motos.destroy', $modeloMoto->id ) }}" method="POST">
+                               {{ csrf_field() }}
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btn btn-link">Borrar</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
